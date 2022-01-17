@@ -26,9 +26,9 @@ const sess = {
     resave: false,
     saveUninitialized: false,
     // sets the amount of time somebody can be logged in for I believe? I think it resets every time you hit a route..
-    // needs some more investigating. currently set to 1 minute
+    // needs some more investigating. currently set to 10 minutes
     cookie: {
-      maxAge: 60000
+      maxAge: 600000
     },
     store: new SequelizeStore({
         db: sequelize,
