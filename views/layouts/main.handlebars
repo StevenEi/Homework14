@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {{!-- put cdns below here --}}
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+<header id="header">
+<h1>The Best Tech BloG Ever</h1>
+<nav>
+    <a href="/">Home</a>
+    <a href="/dashboard">Dashboard</a>
+    {{#if logged_in}}
+    <button id="logout">Logout</button>
+    {{else}}
+    <a href="/login">Login</a>
+    {{/if}}
+</nav>
+</header>
+
+{{{body}}}
+    
+    {{!-- Links the JS file to the handlebars page --}}
+    <script src="/js/save.js"></script>
+    <script src="/js/delete.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/signup.js"></script>
+    <script src="/js/logout.js"></script>
+    <script src="/js/update.js"></script>
+    {{!-- <script src="/js/timeout.js"></script> --}}
+</body>
+</html>

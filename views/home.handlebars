@@ -1,0 +1,8 @@
+{{#each allPosts as |post|}}
+{{> post-details}}
+{{#if logged_in}}
+  <span>Leave a Comment!</span> </br>
+  <textarea type="text" id="newComment-body"></textarea> </br>
+  <button id="newComment-btn">Save</button>
+  {{/if}}
+{{/each}}
