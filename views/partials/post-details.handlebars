@@ -7,14 +7,14 @@
       <p>Posted by: {{user.userName}}</p>
       <p>Date Posted: {{createdAt}}</p>
   </div>
-{{!-- 
-  {{#if logged_in}}
+
+  {{!-- {{#if logged_in}}  --}}
   <span>Leave a Comment!</span> </br>
   <textarea type="text" id="newComment-body"></textarea> </br>
   <button id="newComment-btn">Save</button>
-  {{/if}} --}}
+  {{!-- {{/if}} --}}
 
-  {{#each userComments}}
+  {{#each userComments as |comments|}}
   {{> comments}}
   {{/each}}
 

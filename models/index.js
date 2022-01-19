@@ -18,6 +18,4 @@ Comments.belongsTo(User, {
     onDelete: "CASCADE",
 })
 
-
-
 module.exports = {Post, User, Comments}

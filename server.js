@@ -42,7 +42,7 @@ app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
 // Imports the post model
-const post = require("./models/post")
+// const post = require("./models/post")
 
 // lets us view the req.body after a post request
 app.use(express.json());

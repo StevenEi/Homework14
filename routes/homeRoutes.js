@@ -8,23 +8,6 @@ const withAuth = require("../utils/auth")
 
 router.get("/", async (req, res) => {
     try {
-        const databasePosts = await Post.findAll({
-            include: [
-                {model: User}
-            ],
-            raw: true,
-            nest: true
-        })
-        res.render('home', { logged_in: req.session.logged_in, allPosts: databasePosts })
-    }
-    catch (err) {
-        console.log(err)
-        res.status(500).json(err)
-    }
-})
-
-router.get("/", async (req, res) => {
-    try {
         const postComments = await Comments.findAll({
             include: [
                 {model: User}
@@ -32,8 +15,14 @@ router.get("/", async (req, res) => {
             raw: true,
             nest: true
         })
-        console.log("post comments data", postComments)
-        res.render('home', { logged_in: req.session.logged_in, userComments: postComments })
+        const databasePosts = await Post.findAll({
+            include: [
+                {model: User}
+            ],
+            raw: true,
+            nest: true
+        })
+        res.render('home', {logged_in: req.session.logged_in, allPosts: databasePosts, userComments: postComments})
     }
     catch (err) {
         console.log(err)
